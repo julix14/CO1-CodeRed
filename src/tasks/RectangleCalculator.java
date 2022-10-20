@@ -1,6 +1,6 @@
 package tasks;
 
-public class RectangelCalculator{
+public class RectangleCalculator {
     public static void calculate(float height, float width) {
         float area = height * width;
         float perimeter = 2 * (height + width);
