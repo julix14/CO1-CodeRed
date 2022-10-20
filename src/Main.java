@@ -1,5 +1,5 @@
 import input.GetFloatFromInputService;
-import tasks.PoundIntoKiloProcessor;
+import tasks.BmiCalculator;
 
 
 public class Main {
@@ -10,7 +10,10 @@ public class Main {
                 GetFloatFromInputService.getFloatFromUserWithMessage("Insert height"),
                 GetFloatFromInputService.getFloatFromUserWithMessage("Insert width"));
         */
-        PoundIntoKiloProcessor.poundsIntoKilo(GetFloatFromInputService.getFloatFromUserWithMessage("Insert Pounds:"));
+        //PoundIntoKiloProcessor.poundsIntoKilo(GetFloatFromInputService.getFloatFromUserWithMessage("Insert Pounds:"));
+        BmiCalculator.calculate(
+                GetFloatFromInputService.getFloatFromUserWithMessage("Insert height in m"),
+                GetFloatFromInputService.getFloatFromUserWithMessage("Insert weight in kg"));
 
 
 
