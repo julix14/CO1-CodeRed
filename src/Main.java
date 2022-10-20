@@ -1,6 +1,7 @@
 import input.InputService;
 import output.OutputService;
 import tasks.InputOutputFun;
+import tasks.PrintExampleLect01;
 import valdidation.ValidationService;
 
 import java.util.ArrayList;
@@ -8,7 +9,10 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        InputOutputFun.inputOutputFun();
+        //InputOutputFun.inputOutputFun();
+        PrintExampleLect01.printExample();
+
+
 
 
     }
