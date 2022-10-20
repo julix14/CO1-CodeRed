@@ -1,13 +1,15 @@
 import input.InputService;
 import output.OutputService;
+import tasks.InputOutputFun;
 import valdidation.ValidationService;
+
+import java.util.ArrayList;
+
 
 public class Main {
     public static void main(String[] args) {
-        InputService inputService = new InputService();
-        OutputService outputService = new OutputService();
-        ValidationService validationService = new ValidationService();
+        InputOutputFun.inputOutputFun();
 
-        outputService.printOutput(validationService.validateInput(inputService.getInput()));
+
     }
 }

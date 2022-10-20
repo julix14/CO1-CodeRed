@@ -3,11 +3,11 @@ package valdidation;
 public class ValidationService {
     public String validateInput(String input) {
         if (input.equals("Christian")) {
-            return "Hello "+ input;
+            return String.format("Hello %s !", input);
         } else if (input.equals("Anna") || input.equals("Alea")) {
-            return "You are cool "+ input;
+            return String.format("Hello %s, you are cool!", input);
         } else {
-            return "you are "+ input;
+            return String.format("Your name is %s .", input);
         }
     }
 }
