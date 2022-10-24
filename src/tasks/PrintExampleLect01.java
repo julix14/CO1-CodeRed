@@ -1,8 +1,11 @@
 package tasks;
 
-public class PrintExampleLect01 {
-    public String name = "Print Example";
-    public static void printExample(){
+public class PrintExampleLect01 implements TaskInterface {
+    public final String name = "Print Example";
+    public void act() {
+        this.printExample();
+    }
+    private void printExample(){
         System.out.println("Hello!");
 
         int age = 40;
