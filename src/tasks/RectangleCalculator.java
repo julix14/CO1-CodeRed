@@ -3,10 +3,10 @@ package tasks;
 import valdidation.ValidationService;
 
 public class RectangleCalculator implements TaskInterface{
-    public final String name = "Rectangle Calculator";
+    final String name = "Rectangle Calculator";
     private final ValidationService validationService = new ValidationService();
 
-
+    @Override
     public void act(){
         this.calculate(
                 validationService.validateInputIsFloat("Insert height"),
@@ -17,5 +17,9 @@ public class RectangleCalculator implements TaskInterface{
         float perimeter = 2 * (height + width);
         System.out.println("Area: " + area);
         System.out.println("Perimeter: " + perimeter);
+    }
+
+    public String getName() {
+        return name;
     }
 }

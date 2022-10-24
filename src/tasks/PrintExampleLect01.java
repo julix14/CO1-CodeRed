@@ -1,7 +1,9 @@
 package tasks;
 
 public class PrintExampleLect01 implements TaskInterface {
-    public final String name = "Print Example";
+    final String name = "Print Example";
+
+    @Override
     public void act() {
         this.printExample();
     }
@@ -17,5 +19,10 @@ public class PrintExampleLect01 implements TaskInterface {
         System.out.println("Generder "+ gender);
         System.out.print("One\nTwo\nThree\n");
 
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }

@@ -3,9 +3,10 @@ package tasks;
 import valdidation.ValidationService;
 
 public class BmiCalculator implements TaskInterface{
-    public final String name = "Bmi-Calculator";
+    final String name = "Bmi-Calculator";
     private final ValidationService validationService = new ValidationService();
 
+    @Override
     public void act(){
         this.calculate(
                 validationService.validateInputIsFloat("Insert height"),
@@ -14,5 +15,10 @@ public class BmiCalculator implements TaskInterface{
     private void calculate(float height, float weight) {
         float bmi = weight / (height * height);
         System.out.println("BMI: " + bmi);
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }

@@ -3,9 +3,10 @@ package tasks;
 import valdidation.ValidationService;
 
 public class GroupCalculator implements TaskInterface {
-    public final String name = "Group-Calculator";
+    final String name = "Group-Calculator";
     private final ValidationService validationService = new ValidationService();
 
+    @Override
     public void act() {
         this.calculateGroupSize(
                 validationService.validateInputIsInt("Insert group size: "),
@@ -19,4 +20,8 @@ public class GroupCalculator implements TaskInterface {
         System.out.println("Number of students crossed over: " + studentsLeft);
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
 }
