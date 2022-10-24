@@ -1,6 +1,7 @@
 package tasks;
 
 public class PrintExampleLect01 {
+    public String name = "Print Example";
     public static void printExample(){
         System.out.println("Hello!");
 
