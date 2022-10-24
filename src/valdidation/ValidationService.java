@@ -1,13 +1,28 @@
 package valdidation;
 
+import input.UserInputService;
+
 public class ValidationService {
-    public String validateInput(String input) {
-        if (input.equals("Christian")) {
-            return String.format("Hello %s !", input);
-        } else if (input.equals("Anna") || input.equals("Alea")) {
-            return String.format("Hello %s, you are cool!", input);
-        } else {
-            return String.format("Your name is %s .", input);
+    private final UserInputService userInputService = new UserInputService();
+
+    public Integer validateInputIsInt(String message) {
+        String input = userInputService.getStringFromUserWithMessage(message);
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a number");
+            return validateInputIsInt(userInputService.getStringFromUserWithMessage(message + " as an Integer: "));
         }
     }
+
+    public Float validateInputIsFloat(String message) {
+        String input = userInputService.getStringFromUserWithMessage(message);
+        try {
+            return Float.parseFloat(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a number");
+            return validateInputIsFloat(userInputService.getStringFromUserWithMessage(message + "as a Insert a number: "));
+        }
+    }
+
 }
