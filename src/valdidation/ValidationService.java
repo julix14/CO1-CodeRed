@@ -25,4 +25,14 @@ public class ValidationService {
         }
     }
 
+    public Integer validateInputIsInRange(String message, Integer min, Integer max) {
+        Integer input = validateInputIsInt(message);
+        if (input >= min && input <= max) {
+            return input;
+        } else {
+            System.out.println("Input is not in range of menu");
+            return validateInputIsInRange(message, min, max);
+        }
+    }
+
 }
