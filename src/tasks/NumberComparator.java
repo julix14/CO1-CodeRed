@@ -15,8 +15,10 @@ public class NumberComparator implements TaskInterface{
     private void compare(float firstNumber, float secondNumber) {
         if (firstNumber == secondNumber) {
             System.out.println("Both numbers are equal");
+        } else if (firstNumber > secondNumber) {
+            System.out.println("The numbers are not equal, First Number is bigger");
         } else {
-            System.out.println("The numbers are not equal");
+            System.out.println("The numbers are not equal, Second Number is bigger");
         }
     }
     public String getName() {
