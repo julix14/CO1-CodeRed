@@ -14,7 +14,16 @@ public class BmiCalculator implements TaskInterface{
     }
     private void calculate(float height, float weight) {
         float bmi = weight / (height * height);
-        System.out.println("BMI: " + bmi);
+        String bmiCategory = "";
+        if (bmi < 18.5){
+           bmiCategory = "Underweight";
+        } else if (bmi <= 18.5 && bmi <= 24.9){
+            bmiCategory = "Normal weight";
+        } else if (bmi > 24.9){
+            bmiCategory = "Overweight";
+        }
+
+        System.out.println("BMI: " + bmi + "\nBMI-Category: " + bmiCategory);
     }
 
     @Override
