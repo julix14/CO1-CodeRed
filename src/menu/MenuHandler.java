@@ -30,6 +30,8 @@ public class MenuHandler {
         menuList.add(groupCalculator);
         NumberComparator numberComparator = new NumberComparator();
         menuList.add(numberComparator);
+        NumberSumGuesser numberSumGuesser = new NumberSumGuesser();
+        menuList.add(numberSumGuesser);
 
         return menuList;
     }
