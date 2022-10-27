@@ -32,6 +32,8 @@ public class MenuHandler {
         menuList.add(numberComparator);
         NumberSumGuesser numberSumGuesser = new NumberSumGuesser();
         menuList.add(numberSumGuesser);
+        GradeConverter gradeConverter = new GradeConverter();
+        menuList.add(gradeConverter);
 
         return menuList;
     }
