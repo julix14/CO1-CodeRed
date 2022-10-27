@@ -28,6 +28,8 @@ public class MenuHandler {
         menuList.add(bmiCalculator);
         GroupCalculator groupCalculator = new GroupCalculator();
         menuList.add(groupCalculator);
+        NumberComparator numberComparator = new NumberComparator();
+        menuList.add(numberComparator);
 
         return menuList;
     }
