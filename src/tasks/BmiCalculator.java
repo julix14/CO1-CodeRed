@@ -9,8 +9,8 @@ public class BmiCalculator implements TaskInterface{
     @Override
     public void act(){
         this.calculate(
-                validationService.validateInputIsFloat("Insert height"),
-                validationService.validateInputIsFloat("Insert weight"));
+                validationService.validateInputIsFloat("Insert height (in m)"),
+                validationService.validateInputIsFloat("Insert weight (in kg)"));
     }
     private void calculate(float height, float weight) {
         float bmi = weight / (height * height);
@@ -18,7 +18,7 @@ public class BmiCalculator implements TaskInterface{
         if (bmi < 18.5){
            bmiCategory = "Underweight";
         } else if (bmi <= 18.5 && bmi <= 24.9){
-            bmiCategory = "Normal weight";
+            bmiCategory = "Healthy";
         } else if (bmi > 24.9){
             bmiCategory = "Overweight";
         }
