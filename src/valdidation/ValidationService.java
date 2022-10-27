@@ -34,5 +34,14 @@ public class ValidationService {
             return validateInputIsInRange(message, min, max);
         }
     }
+    public String validateInputIsString(String message) {
+        String input = userInputService.getStringFromUserWithMessage(message);
+        if (input.isEmpty()) {
+            System.out.println("Input is empty");
+            return validateInputIsString(message);
+        } else {
+            return input;
+        }
+    }
 
 }
