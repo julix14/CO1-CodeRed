@@ -9,11 +9,11 @@ public class NumberComparator implements TaskInterface{
     @Override
     public void act(){
         this.compare(
-                validationService.validateInputIsFloat("Insert first number"),
-                validationService.validateInputIsFloat("Insert second number"));
+                validationService.validateInputIsInt("Insert first number"),
+                validationService.validateInputIsInt("Insert second number"));
     }
-    private void compare(float firstNumber, float secondNumber) {
-        if (firstNumber == secondNumber) {
+    private void compare(Integer firstNumber, Integer secondNumber) {
+        if (firstNumber.equals(secondNumber)) {
             System.out.println("Both numbers are equal");
         } else if (firstNumber > secondNumber) {
             System.out.println("The numbers are not equal, First Number is bigger");
