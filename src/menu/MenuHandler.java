@@ -34,6 +34,10 @@ public class MenuHandler {
         menuList.add(numberSumGuesser);
         GradeConverter gradeConverter = new GradeConverter();
         menuList.add(gradeConverter);
+        PriceCalculator priceCalculator = new PriceCalculator();
+        menuList.add(priceCalculator);
+        WeekdayOutput weekdayOutput = new WeekdayOutput();
+        menuList.add(weekdayOutput);
 
         return menuList;
     }
