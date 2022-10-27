@@ -13,7 +13,7 @@ public class GradeConverter implements TaskInterface{
     }
 
     private void convert(int grade){
-        if(grade >= 96){
+        if (grade >= 96){
             System.out.println("1");
         } else if(grade >= 91){
             System.out.println("1.3");
