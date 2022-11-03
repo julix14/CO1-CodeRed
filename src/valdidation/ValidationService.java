@@ -9,7 +9,7 @@ public class ValidationService {
 
     public Integer validateInputIsInt(String message) {
         String input;
-        boolean isInt = false;
+        boolean isInt;
         int number = 0;
         do{
             input = userInputService.getStringFromUserWithMessage(message);
@@ -26,7 +26,7 @@ public class ValidationService {
 
     public Float validateInputIsFloat(String message) {
         String input;
-        boolean isFloat = false;
+        boolean isFloat;
         Float number = 1.0f;
         do{
             input = userInputService.getStringFromUserWithMessage(message);
