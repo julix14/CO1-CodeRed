@@ -3,10 +3,7 @@ package menu;
 import tasks.TaskInterface;
 import tasks.lecture1.*;
 import tasks.lecture2.*;
-import tasks.lecture3.CircleCalculator;
-import tasks.lecture3.DisplayEven;
-import tasks.lecture3.MultiplicationService;
-import tasks.lecture3.PaintPattern;
+import tasks.lecture3.*;
 import valdidation.ValidationService;
 
 import java.util.LinkedList;
@@ -52,6 +49,9 @@ public class MenuHandler {
         menuList.add(multiplicationService);
         CircleCalculator circleCalculator = new CircleCalculator();
         menuList.add(circleCalculator);
+        VendingMachine vendingMachine = new VendingMachine();
+        menuList.add(vendingMachine);
+
 
         return menuList;
     }

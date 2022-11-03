@@ -43,7 +43,7 @@ public class CircleCalculator implements TaskInterface {
                     System.out.println("Radius set to " + radius);
                 }
                 case 2 -> System.out.println("Radius is: " + radius);
-                case 3 -> System.out.println("Area is: " + Math.PI * (radius * radius));
+                case 3 -> System.out.println("Area is: " + Math.PI * Math.pow(radius, 2));
                 case 4 -> System.out.println("Perimeter is: " + 2 * Math.PI * radius);
                 case 5 -> System.out.println("Goodbye");
             }
