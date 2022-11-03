@@ -3,6 +3,7 @@ package menu;
 import tasks.TaskInterface;
 import tasks.lecture1.*;
 import tasks.lecture2.*;
+import tasks.lecture3.CircleCalculator;
 import tasks.lecture3.DisplayEven;
 import tasks.lecture3.MultiplicationService;
 import tasks.lecture3.PaintPattern;
@@ -49,6 +50,8 @@ public class MenuHandler {
         menuList.add(paintPattern);
         MultiplicationService multiplicationService = new MultiplicationService();
         menuList.add(multiplicationService);
+        CircleCalculator circleCalculator = new CircleCalculator();
+        menuList.add(circleCalculator);
 
         return menuList;
     }
