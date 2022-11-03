@@ -2,27 +2,43 @@ package valdidation;
 
 import input.UserInputService;
 
+import static java.lang.Float.parseFloat;
+
 public class ValidationService {
     private final UserInputService userInputService = new UserInputService();
 
     public Integer validateInputIsInt(String message) {
-        String input = userInputService.getStringFromUserWithMessage(message);
-        try {
-            return Integer.parseInt(input);
-        } catch (NumberFormatException e) {
-            System.out.println("Input is not a number");
-            return validateInputIsInt(userInputService.getStringFromUserWithMessage(message + " as an Integer: "));
-        }
+        String input;
+        boolean isInt = false;
+        int number = 0;
+        do{
+            input = userInputService.getStringFromUserWithMessage(message);
+            try {
+                number = Integer.parseInt(input);
+                isInt = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Input is not a number");
+                isInt = false;
+            }
+        }while (!isInt);
+        return number;
     }
 
     public Float validateInputIsFloat(String message) {
-        String input = userInputService.getStringFromUserWithMessage(message);
-        try {
-            return Float.parseFloat(input);
-        } catch (NumberFormatException e) {
-            System.out.println("Input is not a number");
-            return validateInputIsFloat(userInputService.getStringFromUserWithMessage(message + "as a Insert a number: "));
-        }
+        String input;
+        boolean isFloat = false;
+        Float number = 1.0f;
+        do{
+            input = userInputService.getStringFromUserWithMessage(message);
+            try {
+                number = parseFloat(input);
+                isFloat = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Input is not a float");
+                isFloat = false;
+            }
+        }while (!isFloat);
+        return number;
     }
 
     public Integer validateInputIsInRange(String message, Integer min, Integer max) {
