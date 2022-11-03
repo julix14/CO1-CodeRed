@@ -4,6 +4,7 @@ import tasks.TaskInterface;
 import tasks.lecture1.*;
 import tasks.lecture2.*;
 import tasks.lecture3.DisplayEven;
+import tasks.lecture3.MultiplicationService;
 import tasks.lecture3.PaintPattern;
 import valdidation.ValidationService;
 
@@ -46,6 +47,8 @@ public class MenuHandler {
         menuList.add(displayEven);
         PaintPattern paintPattern = new PaintPattern();
         menuList.add(paintPattern);
+        MultiplicationService multiplicationService = new MultiplicationService();
+        menuList.add(multiplicationService);
 
         return menuList;
     }

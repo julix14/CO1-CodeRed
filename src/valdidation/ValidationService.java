@@ -50,6 +50,16 @@ public class ValidationService {
             return validateInputIsInRange(message, min, max);
         }
     }
+
+    public Integer validateInputIsBiggerThan(String message, Integer min) {
+        Integer input = validateInputIsInt(message);
+        if (input >= min) {
+            return input;
+        } else {
+            System.out.println("Input is not in range of menu");
+            return validateInputIsBiggerThan(message, min);
+        }
+    }
     public String validateInputIsString(String message) {
         String input = userInputService.getStringFromUserWithMessage(message);
         if (input.isEmpty()) {
