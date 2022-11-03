@@ -4,6 +4,7 @@ import tasks.TaskInterface;
 import tasks.lecture1.*;
 import tasks.lecture2.*;
 import tasks.lecture3.DisplayEven;
+import tasks.lecture3.PaintPattern;
 import valdidation.ValidationService;
 
 import java.util.LinkedList;
@@ -43,6 +44,8 @@ public class MenuHandler {
         menuList.add(weekdayOutput);
         DisplayEven displayEven = new DisplayEven();
         menuList.add(displayEven);
+        PaintPattern paintPattern = new PaintPattern();
+        menuList.add(paintPattern);
 
         return menuList;
     }
