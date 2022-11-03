@@ -3,6 +3,7 @@ package menu;
 import tasks.TaskInterface;
 import tasks.lecture1.*;
 import tasks.lecture2.*;
+import tasks.lecture3.DisplayEven;
 import valdidation.ValidationService;
 
 import java.util.LinkedList;
@@ -40,6 +41,8 @@ public class MenuHandler {
         menuList.add(priceCalculator);
         WeekdayOutput weekdayOutput = new WeekdayOutput();
         menuList.add(weekdayOutput);
+        DisplayEven displayEven = new DisplayEven();
+        menuList.add(displayEven);
 
         return menuList;
     }
