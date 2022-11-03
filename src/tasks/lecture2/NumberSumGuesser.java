@@ -1,8 +1,9 @@
-package tasks;
+package tasks.lecture2;
 
+import tasks.TaskInterface;
 import valdidation.ValidationService;
 
-public class NumberSumGuesser implements TaskInterface{
+public class NumberSumGuesser implements TaskInterface {
 
     final String name = "Number Sum Guesser";
     final ValidationService validationService= new ValidationService();

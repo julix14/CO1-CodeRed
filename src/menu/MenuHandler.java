@@ -1,6 +1,8 @@
 package menu;
 
-import tasks.*;
+import tasks.TaskInterface;
+import tasks.lecture1.*;
+import tasks.lecture2.*;
 import valdidation.ValidationService;
 
 import java.util.LinkedList;
