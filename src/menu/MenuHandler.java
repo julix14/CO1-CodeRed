@@ -4,6 +4,7 @@ import tasks.TaskInterface;
 import tasks.lecture1.*;
 import tasks.lecture2.*;
 import tasks.lecture3.*;
+import tasks.lecture4.MoneyConverter;
 import valdidation.ValidationService;
 
 import java.util.LinkedList;
@@ -51,6 +52,8 @@ public class MenuHandler {
         menuList.add(circleCalculator);
         VendingMachine vendingMachine = new VendingMachine();
         menuList.add(vendingMachine);
+        MoneyConverter moneyConverter = new MoneyConverter();
+        menuList.add(moneyConverter);
 
 
         return menuList;

@@ -27,7 +27,7 @@ public class ValidationService {
     public Float validateInputIsFloat(String message) {
         String input;
         boolean isFloat;
-        Float number = 1.0f;
+        Float number = 0f;
         do{
             input = userInputService.getStringFromUserWithMessage(message);
             try {
