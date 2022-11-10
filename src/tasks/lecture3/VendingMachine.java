@@ -45,28 +45,12 @@ public class VendingMachine implements TaskInterface {
             selectedNumber = validationService.validateInputIsInRange("Please select a number from the menu", 1, 6);
 
             switch (selectedNumber) {
-                case 1 -> {
-                    System.out.println("You got gum");
-                    sales.put("Gum", sales.get("Gum") + 1);
-                }
-                case 2 -> {
-                    System.out.println("You got Chocolate");
-                    sales.put("Chocolate", sales.get("Chocolate") + 1);
-                }
-                case 3 -> {
-                    System.out.println("You got Popcorn");
-                    sales.put("Popcorn", sales.get("Popcorn") + 1);
-                }
-                case 4 -> {
-                    System.out.println("You got Juice");
-                    sales.put("Juice", sales.get("Juice") + 1);
-                }
-                case 5 -> {
-                    System.out.println("Total sales so far:");
-                    for (String item : sales.keySet()) {
-                        System.out.println(item + ": " + sales.get(item));
-                    }
-                }
+                case 1 -> putItemToSales(sales, "Gum");
+                case 2 -> putItemToSales(sales, "Chocolate");
+
+                case 3 -> putItemToSales(sales, "Popcorn");
+                case 4 -> putItemToSales(sales, "Juice");
+                case 5 -> printSales(sales);
                 case 6 -> System.out.println("Goodbye");
             }
 
@@ -77,6 +61,18 @@ public class VendingMachine implements TaskInterface {
     @Override
     public String getName() {
         return this.name;
+    }
+
+    private void putItemToSales(HashMap<String, Integer> sales, String item) {
+        System.out.println("You got " + item);
+        sales.put(item, sales.get(item) + 1);
+    }
+
+    private void printSales(HashMap<String, Integer> sales) {
+        System.out.println("Total sales so far:");
+        for (String item : sales.keySet()) {
+            System.out.println(item + ": " + sales.get(item));
+        }
     }
 
 
