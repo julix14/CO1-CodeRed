@@ -4,50 +4,19 @@ import tasks.TaskInterface;
 import valdidation.ValidationService;
 
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.LinkedList;
 import java.util.stream.IntStream;
 
 public class ArrayMethods implements TaskInterface {
     final String name = "Array Methods";
     final ValidationService validationService = new ValidationService();
-    final Scanner scanner  = new Scanner(System.in);
 
     @Override
     public void act() {
-        int length = validationService.validateInputIsInt("Insert length of array");
-        int[] array = new int[length];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = validationService.validateInputIsInt("Insert value for index " + i);
-        }
-        System.out.println("Array: " + Arrays.toString(array));
-        //Check if the Array cointains a specific value
-        System.out.println("Does the array a specific value? ");
-        this.contains(
-                validationService.validateInputIsInt("Insert value to search for"),
-                array);
 
-        //Get the average of the values inside the Array
-        this.next();
-        System.out.println("Average of the values inside the Array: ");
-        this.average(array);
-
-        //Get the maximum value inside the Array and its index
-        this.next();
-        System.out.println("Maximum value inside the Array and its index: ");
-        this.max(array);
-
-        //Print every Value that's equal or bigger than the average
-        this.next();
-        System.out.println("Every Value that's equal or bigger than the average: ");
-        this.print(array);
-
+        methodSelection();
 
     }
-    private void next(){
-        System.out.println("Press enter to continue");
-        scanner.nextLine();
-    }
-
     private void contains(int number, int... numbers) {
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] == number) {
@@ -64,7 +33,7 @@ public class ArrayMethods implements TaskInterface {
         return sum / numbers.length;
     }
 
-    private void print(int... numbers) {
+    private void printIfBiggerAsAverage(int... numbers) {
         int average = average(numbers);
 
         for(int i: numbers) {
@@ -84,6 +53,45 @@ public class ArrayMethods implements TaskInterface {
             }
         }
         System.out.printf("\n%d is the biggest number, and it's on pos. %d\n", max, position);
+    }
+
+    private int[] buildArray(){
+        int length = validationService.validateInputIsInt("Insert length of array");
+        int[] array = new int[length];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = validationService.validateInputIsInt("Insert value for index " + i);
+        }
+        System.out.println("Your Array is: " + Arrays.toString(array));
+        return array;
+    }
+
+    private void methodSelection(){
+        int selectedItem;
+        int[] array = buildArray();
+
+        LinkedList<String> menuItems = new LinkedList<>();
+        menuItems.add("Quit");
+        menuItems.add("Contains a specific value");
+        menuItems.add("Average of the values inside the Array");
+        menuItems.add("Max value inside the Array and its index");
+        menuItems.add("Print if bigger as average");
+        menuItems.add("Build new Array");
+
+        do {
+            for (int i = 0; i < menuItems.size(); i++) {
+                System.out.printf("[%d] -> %s\n", i, menuItems.get(i));
+            }
+            selectedItem = validationService.validateInputIsInRange("Select a method to run", 0, menuItems.size() - 1);
+            switch (selectedItem){
+                case 0 -> System.out.println("Bye");
+                case 1 -> this.contains(validationService.validateInputIsInt("Insert value to search for"), array);
+                case 2 -> this.average();
+                case 3 -> this.max();
+                case 4 -> this.printIfBiggerAsAverage();
+                case 5 -> this.buildArray();
+            }
+        }while (selectedItem != 0);
+
     }
 
     @Override
