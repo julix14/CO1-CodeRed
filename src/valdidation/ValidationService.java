@@ -29,6 +29,18 @@ public class ValidationService {
         }while (true);
     }
 
+    public Double validateInputIsDouble(String message) {
+        String input;
+        do{
+            input = userInputService.getStringFromUserWithMessage(message);
+            try {
+                return Double.parseDouble(input);
+            } catch (NumberFormatException e) {
+                System.out.println("Input is not a number");
+            }
+        }while (true);
+    }
+
     public Integer validateInputIsInRange(String message, Integer min, Integer max) {
         Integer input;
         do {
