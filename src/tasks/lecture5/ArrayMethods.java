@@ -17,17 +17,21 @@ public class ArrayMethods implements TaskInterface {
             array[i] = validationService.validateInputIsInt("Insert value for index " + i);
         }
         //Check if the Array cointains a specific value
+        System.out.println("Does the array a specific value? ");
         this.contains(
                 validationService.validateInputIsInt("Insert value to search for"),
                 array);
 
         //Get the average of the values inside the Array
+        System.out.println("Average of the values inside the Array: ");
         this.average(array);
 
         //Get the maximum value inside the Array and its index
+        System.out.println("Maximum value inside the Array and its index: ");
         this.max(array);
 
         //Print every Value that's equal or bigger than the average
+        System.out.println("Every Value that's equal or bigger than the average: ");
         this.print(array);
 
 

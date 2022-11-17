@@ -5,6 +5,7 @@ import tasks.lecture1.*;
 import tasks.lecture2.*;
 import tasks.lecture3.*;
 import tasks.lecture4.MoneyConverter;
+import tasks.lecture5.ArrayMethods;
 import tasks.lecture5.TemperatureReadings;
 import valdidation.ValidationService;
 
@@ -57,6 +58,8 @@ public class MenuHandler {
         menuList.add(moneyConverter);
         TemperatureReadings temperatureReadings = new TemperatureReadings();
         menuList.add(temperatureReadings);
+        ArrayMethods arrayMethods = new ArrayMethods();
+        menuList.add(arrayMethods);
 
 
         return menuList;
