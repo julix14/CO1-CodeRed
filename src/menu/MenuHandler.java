@@ -14,54 +14,66 @@ import java.util.List;
 
 public class MenuHandler {
     private final ValidationService validationService = new ValidationService();
-
+    List<TaskInterface> menuList;
+    public MenuHandler(List<TaskInterface> menuList) {
+        this.menuList = menuList;
+    }
+    public MenuHandler() {
+        this.menuList = buildUpMainMenuList();
+    }
     public void act(){
-        List<TaskInterface> menuList = buildUpMenuList();
         printMenu(menuList);
         selectFromMenu(menuList);
     }
 
-    private LinkedList<TaskInterface> buildUpMenuList() {
+    private LinkedList<TaskInterface> buildUpMainMenuList() {
         //Create an Instance of each task and add it to the list
         LinkedList<TaskInterface> menuList = new LinkedList<>();
-        PrintExampleLect01 printExampleLect01 = new PrintExampleLect01();
-        menuList.add(printExampleLect01);
-        PoundIntoKiloProcessor poundIntoKiloProcessor = new PoundIntoKiloProcessor();
-        menuList.add(poundIntoKiloProcessor);
-        RectangleCalculator rectangleCalculator = new RectangleCalculator();
-        menuList.add(rectangleCalculator);
-        BmiCalculator bmiCalculator = new BmiCalculator();
-        menuList.add(bmiCalculator);
-        GroupCalculator groupCalculator = new GroupCalculator();
-        menuList.add(groupCalculator);
-        NumberComparator numberComparator = new NumberComparator();
-        menuList.add(numberComparator);
-        NumberSumGuesser numberSumGuesser = new NumberSumGuesser();
-        menuList.add(numberSumGuesser);
-        GradeConverter gradeConverter = new GradeConverter();
-        menuList.add(gradeConverter);
-        PriceCalculator priceCalculator = new PriceCalculator();
-        menuList.add(priceCalculator);
-        WeekdayOutput weekdayOutput = new WeekdayOutput();
-        menuList.add(weekdayOutput);
-        DisplayEven displayEven = new DisplayEven();
-        menuList.add(displayEven);
-        PaintPattern paintPattern = new PaintPattern();
-        menuList.add(paintPattern);
-        MultiplicationService multiplicationService = new MultiplicationService();
-        menuList.add(multiplicationService);
-        CircleCalculator circleCalculator = new CircleCalculator();
-        menuList.add(circleCalculator);
-        VendingMachine vendingMachine = new VendingMachine();
-        menuList.add(vendingMachine);
-        MoneyConverter moneyConverter = new MoneyConverter();
-        menuList.add(moneyConverter);
-        TemperatureReadings temperatureReadings = new TemperatureReadings();
-        menuList.add(temperatureReadings);
-        ArrayMethods arrayMethods = new ArrayMethods();
-        menuList.add(arrayMethods);
+
+        //Lecture 1
+        MenuGroup lecture1 = new MenuGroup(
+                "Lecture 1",
+                new PrintExampleLect01(),
+                new PoundIntoKiloProcessor(),
+                new RectangleCalculator(),
+                new BmiCalculator(),
+                new GroupCalculator());
+        menuList.add(lecture1);
+
+        //Lecture 2
 
 
+        MenuGroup lecture2 = new MenuGroup(
+                "Lecture 2",
+                new NumberComparator(),
+                new NumberSumGuesser(),
+                new GradeConverter(),
+                new PriceCalculator(),
+                new WeekdayOutput());
+        menuList.add(lecture2);
+
+        //Lecture 3
+        MenuGroup lecture3 = new MenuGroup(
+                "Lecture 3",
+                new DisplayEven(),
+                new PaintPattern(),
+                new MultiplicationService(),
+                new CircleCalculator(),
+                new VendingMachine());
+        menuList.add(lecture3);
+
+        //Lecture 4
+        MenuGroup lecture4 = new MenuGroup(
+                "Lecture 4",
+                new MoneyConverter());
+        menuList.add(lecture4);
+
+        //Lecture 5
+        MenuGroup lecture5 = new MenuGroup(
+                "Lecture 5",
+                new TemperatureReadings(),
+                new ArrayMethods());
+        menuList.add(lecture5);
         return menuList;
     }
 
