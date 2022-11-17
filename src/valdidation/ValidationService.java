@@ -2,72 +2,65 @@ package valdidation;
 
 import input.UserInputService;
 
-import static java.lang.Float.parseFloat;
-
 public class ValidationService {
     private final UserInputService userInputService = new UserInputService();
 
     public Integer validateInputIsInt(String message) {
         String input;
-        boolean isInt;
-        int number = 0;
         do{
             input = userInputService.getStringFromUserWithMessage(message);
             try {
-                number = Integer.parseInt(input);
-                isInt = true;
+                return Integer.parseInt(input);
             } catch (NumberFormatException e) {
                 System.out.println("Input is not a number");
-                isInt = false;
             }
-        }while (!isInt);
-        return number;
+        }while (true);
     }
 
     public Float validateInputIsFloat(String message) {
         String input;
-        boolean isFloat;
-        Float number = 0f;
         do{
             input = userInputService.getStringFromUserWithMessage(message);
             try {
-                number = parseFloat(input);
-                isFloat = true;
+                return Float.parseFloat(input);
             } catch (NumberFormatException e) {
-                System.out.println("Input is not a float");
-                isFloat = false;
+                System.out.println("Input is not a number");
             }
-        }while (!isFloat);
-        return number;
+        }while (true);
     }
 
     public Integer validateInputIsInRange(String message, Integer min, Integer max) {
-        Integer input = validateInputIsInt(message);
-        if (input >= min && input <= max) {
-            return input;
-        } else {
-            System.out.println("Input is not in range of menu");
-            return validateInputIsInRange(message, min, max);
-        }
+        Integer input;
+        do {
+            input = validateInputIsInt(message);
+            if (input >= min && input <= max) {
+                return input;
+            } else {
+                System.out.println("Input is not in range");
+            }
+        }while (true);
     }
 
     public Integer validateInputIsBiggerThan(String message, Integer min) {
-        Integer input = validateInputIsInt(message);
-        if (input >= min) {
-            return input;
-        } else {
-            System.out.println("Input is not in range of menu");
-            return validateInputIsBiggerThan(message, min);
-        }
+        Integer input;
+        do {
+            input = validateInputIsInt(message);
+            if (input >= min) {
+                return input;
+            } else {
+                System.out.println("Input is to big. It may just be " + min + " or bigger");
+            }
+        }while (true);
     }
-    public String validateInputIsString(String message) {
-        String input = userInputService.getStringFromUserWithMessage(message);
-        if (input.isEmpty()) {
-            System.out.println("Input is empty");
-            return validateInputIsString(message);
-        } else {
-            return input;
-        }
+    public String valdidateInputIsNotEmpty(String message) {
+        String input;
+        do {
+            input = userInputService.getStringFromUserWithMessage(message);
+            if (!input.isEmpty()) {
+                return input;
+            } else {
+                System.out.println("Input is empty");
+            }
+        } while (true);
     }
-
 }

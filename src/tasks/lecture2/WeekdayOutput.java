@@ -10,7 +10,7 @@ public class WeekdayOutput implements TaskInterface {
     public void act() {
         outputWeekday(
                 validationService.validateInputIsInt("Insert weekday number"),
-                validationService.validateInputIsString("Insert language (en/de)"));
+                validationService.valdidateInputIsNotEmpty("Insert language (en/de)"));
     }
 
     private void outputWeekday(int weekday, String language) {
