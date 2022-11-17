@@ -80,7 +80,7 @@ public class MenuHandler {
     private void printMenu(List<TaskInterface> menuList) {
         //Print menu
         for (int i = 0; i < menuList.size(); i++) {
-            System.out.println(i+1 + " " + menuList.get(i).getName());
+            System.out.printf("[%d] -> %s\n", i, menuList.get(i));
         }
     }
 
