@@ -80,15 +80,15 @@ public class MenuHandler {
     private void printMenu(List<TaskInterface> menuList) {
         //Print menu
         for (int i = 0; i < menuList.size(); i++) {
-            System.out.println(i + " " + menuList.get(i).getName());
+            System.out.println(i+1 + " " + menuList.get(i).getName());
         }
     }
 
     private void selectFromMenu(List<TaskInterface> menuList){
         //Select a menu item
-        Integer selectedItemNumber = validationService.validateInputIsInRange("Select a menu item: ", 0 ,menuList.size()-1);
+        Integer selectedItemNumber = validationService.validateInputIsInRange("Select a menu item: ", 1 ,menuList.size());
         //Get selected item from menuList
-        TaskInterface selectedItem = menuList.get(selectedItemNumber);
+        TaskInterface selectedItem = menuList.get(selectedItemNumber-1);
         System.out.println("You selected: " + selectedItem.getName());
         //Run selected item
         selectedItem.act();
