@@ -1,7 +1,7 @@
 package tasks.lecture3;
 
 import tasks.TaskInterface;
-import valdidation.ValidationService;
+import validation.ValidationService;
 
 public class MultiplicationService implements TaskInterface {
     ValidationService validationService = new ValidationService();

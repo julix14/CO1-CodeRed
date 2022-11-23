@@ -1,7 +1,7 @@
 package tasks.lecture4;
 
 import tasks.TaskInterface;
-import valdidation.ValidationService;
+import validation.ValidationService;
 
 public class MoneyConverter implements TaskInterface {
     final String name = "Money Converter";

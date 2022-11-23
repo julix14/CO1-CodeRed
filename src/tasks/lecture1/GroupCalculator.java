@@ -1,7 +1,7 @@
 package tasks.lecture1;
 
 import tasks.TaskInterface;
-import valdidation.ValidationService;
+import validation.ValidationService;
 
 public class GroupCalculator implements TaskInterface {
     final String name = "Group-Calculator";

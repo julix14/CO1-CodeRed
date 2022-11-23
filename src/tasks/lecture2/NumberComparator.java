@@ -1,7 +1,7 @@
 package tasks.lecture2;
 
 import tasks.TaskInterface;
-import valdidation.ValidationService;
+import validation.ValidationService;
 
 public class NumberComparator implements TaskInterface {
     final String name = "Number Comparator";

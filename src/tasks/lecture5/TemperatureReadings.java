@@ -1,7 +1,7 @@
 package tasks.lecture5;
 
 import tasks.TaskInterface;
-import valdidation.ValidationService;
+import validation.ValidationService;
 
 public class TemperatureReadings implements TaskInterface {
     final String name = "Temperature Readings";

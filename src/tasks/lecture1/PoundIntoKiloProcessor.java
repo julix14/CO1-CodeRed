@@ -1,7 +1,7 @@
 package tasks.lecture1;
 
 import tasks.TaskInterface;
-import valdidation.ValidationService;
+import validation.ValidationService;
 
 public class PoundIntoKiloProcessor implements TaskInterface {
     final String name = "Pound into Kilo Processor";

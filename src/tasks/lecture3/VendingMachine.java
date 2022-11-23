@@ -1,7 +1,7 @@
 package tasks.lecture3;
 
 import tasks.TaskInterface;
-import valdidation.ValidationService;
+import validation.ValidationService;
 
 import java.util.HashMap;
 import java.util.LinkedList;

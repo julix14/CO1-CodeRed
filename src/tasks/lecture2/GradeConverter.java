@@ -1,7 +1,7 @@
 package tasks.lecture2;
 
 import tasks.TaskInterface;
-import valdidation.ValidationService;
+import validation.ValidationService;
 
 public class GradeConverter implements TaskInterface {
     String name = "Grade Converter";

@@ -1,4 +1,4 @@
-package valdidation;
+package validation;
 
 import input.UserInputService;
 

@@ -1,9 +1,10 @@
 package tasks.lecture5;
 
 import tasks.TaskInterface;
-import valdidation.ValidationService;
+import validation.ValidationService;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.stream.IntStream;
 
@@ -70,12 +71,14 @@ public class ArrayMethods implements TaskInterface {
         int[] array = buildArray();
 
         LinkedList<String> menuItems = new LinkedList<>();
-        menuItems.add("Quit");
-        menuItems.add("Contains a specific value");
-        menuItems.add("Average of the values inside the Array");
-        menuItems.add("Max value inside the Array and its index");
-        menuItems.add("Print if bigger as average");
-        menuItems.add("Build new Array");
+        Collections.addAll(menuItems,
+                "Quit",
+                "Contains a specific value",
+                "Average of the values inside the Array",
+                "Max value inside the Array and its index",
+                "Print if bigger as average",
+                "Build new Array"
+        );
 
         do {
             for (int i = 0; i < menuItems.size(); i++) {
