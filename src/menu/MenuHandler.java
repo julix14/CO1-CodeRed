@@ -7,6 +7,8 @@ import tasks.lecture3.*;
 import tasks.lecture4.MoneyConverter;
 import tasks.lecture5.ArrayMethods;
 import tasks.lecture5.TemperatureReadings;
+import tasks.lecture9.PasswordChecker;
+import tasks.lecture9.PasswordGenerator;
 import validation.ValidationService;
 
 import java.util.LinkedList;
@@ -74,6 +76,14 @@ public class MenuHandler {
                 new TemperatureReadings(),
                 new ArrayMethods());
         menuList.add(lecture5);
+
+
+        MenuGroup lecture9 = new MenuGroup(
+                "Lecture 9",
+                new PasswordChecker(),
+                new PasswordGenerator());
+        menuList.add(lecture9);
+
         return menuList;
     }
 
